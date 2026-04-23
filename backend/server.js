@@ -11,12 +11,10 @@ const PORT = process.env.PORT || 5000
 app.use(cors())
 app.use(express.json())
 
-// Connect to MongoDB
 mongoose.connect(process.env.MONGO_URI)
   .then(() => console.log('Connected to MongoDB'))
   .catch(err => console.log('MongoDB error:', err))
 
-// GET all trades
 app.get('/api/trades', async (req, res) => {
   try {
     const trades = await Trade.find()
@@ -26,7 +24,6 @@ app.get('/api/trades', async (req, res) => {
   }
 })
 
-// GET single trade
 app.get('/api/trades/:id', async (req, res) => {
   try {
     const trade = await Trade.findById(req.params.id)
@@ -37,7 +34,6 @@ app.get('/api/trades/:id', async (req, res) => {
   }
 })
 
-// POST — create new trade
 app.post('/api/trades', async (req, res) => {
   try {
     const trade = new Trade(req.body)
@@ -48,7 +44,6 @@ app.post('/api/trades', async (req, res) => {
   }
 })
 
-// GET live price for a symbol
 app.get('/api/price/:symbol', async (req, res) => {
   try {
     const { symbol } = req.params

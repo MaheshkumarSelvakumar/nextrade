@@ -5,10 +5,10 @@ const tradeSchema = new mongoose.Schema({
   type: { type: String, enum: ['BUY', 'SELL'], required: true },
   quantity: { type: Number, required: true },
   price: { type: Number, required: true },
-  status: { 
-    type: String, 
-    enum: ['executed', 'pending', 'failed'], 
-    required: true 
+  status: {
+    type: String,
+    enum: ['executed', 'pending', 'failed'],
+    required: true
   }
 }, { timestamps: true })
 

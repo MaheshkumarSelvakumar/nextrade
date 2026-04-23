@@ -1,19 +1,4 @@
-import { useState, useEffect } from 'react'
-
-function TradeCard({ trade }) {
-  const [livePrice, setLivePrice] = useState(null)
-  const [priceChange, setPriceChange] = useState(null)
-
-  useEffect(() => {
-    fetch(`http://localhost:5000/api/price/${trade.symbol}`)
-      .then(res => res.json())
-      .then(data => {
-        setLivePrice(data.currentPrice)
-        setPriceChange(data.percentChange)
-      })
-      .catch(() => console.log('Price fetch failed'))
-  }, [trade.symbol])
-
+function TradeCard({ trade, livePrice }) {
   return (
     <div className="trade-card">
       <h3>{trade.symbol}</h3>
@@ -21,11 +6,11 @@ function TradeCard({ trade }) {
       <p>Quantity: <span>{trade.quantity}</span></p>
       <p>Trade Price: <span>${trade.price}</span></p>
       <p>Live Price: <span className={livePrice ? 'live-price' : ''}>
-        {livePrice ? `$${livePrice}` : 'Loading...'}
+        {livePrice ? `$${livePrice.currentPrice}` : 'Loading...'}
       </span></p>
-      {priceChange !== null && (
-        <p>Change: <span className={priceChange >= 0 ? 'type-buy' : 'type-sell'}>
-          {priceChange >= 0 ? '+' : ''}{priceChange?.toFixed(2)}%
+      {livePrice?.percentChange !== undefined && (
+        <p>Change: <span className={livePrice.percentChange >= 0 ? 'type-buy' : 'type-sell'}>
+          {livePrice.percentChange >= 0 ? '+' : ''}{livePrice.percentChange?.toFixed(2)}%
         </span></p>
       )}
       <p>Total: <span>${(trade.quantity * trade.price).toLocaleString()}</span></p>

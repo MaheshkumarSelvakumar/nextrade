@@ -97,6 +97,57 @@ nav p {
   border-color: #4f8ef7;
 }
 
+/* Toolbar */
+.toolbar {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 16px;
+  align-items: center;
+}
+
+.toolbar button {
+  padding: 8px 20px;
+  border-radius: 20px;
+  border: 1px solid #2a2d3e;
+  background-color: #1a1d2e;
+  color: #8888aa;
+  cursor: pointer;
+  font-size: 14px;
+  transition: all 0.2s;
+}
+
+.toolbar button:hover {
+  background-color: #4f8ef7;
+  color: #ffffff;
+  border-color: #4f8ef7;
+}
+
+.toolbar button.active {
+  background-color: #4f8ef7;
+  color: #ffffff;
+  border-color: #4f8ef7;
+}
+
+/* Search input */
+.search-input {
+  padding: 8px 16px;
+  border-radius: 20px;
+  border: 1px solid #2a2d3e;
+  background-color: #1a1d2e;
+  color: #ffffff;
+  font-size: 14px;
+  width: 250px;
+  outline: none;
+}
+
+.search-input:focus {
+  border-color: #4f8ef7;
+}
+
+.search-input::placeholder {
+  color: #8888aa;
+}
+
 /* Trade cards grid */
 .trade-grid {
   display: grid;
@@ -171,76 +222,10 @@ nav p {
   font-weight: bold;
 }
 
-/* Toolbar */
-.toolbar {
-  display: flex;
-  gap: 12px;
-  margin-bottom: 16px;
-  align-items: center;
-}
-
-.search-input {
-  padding: 8px 16px;
-  border-radius: 20px;
-  border: 1px solid #2a2d3e;
-  background-color: #1a1d2e;
-  color: #ffffff;
-  font-size: 14px;
-  width: 250px;
-  outline: none;
-}
-
-.search-input:focus {
-  border-color: #4f8ef7;
-}
-
-.search-input::placeholder {
-  color: #8888aa;
-}
-
-/* Loading */
-.loading {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 400px;
-  font-size: 18px;
+/* Live price */
+.live-price {
   color: #4f8ef7;
-  letter-spacing: 1px;
-}
-
-.toolbar button {
-  padding: 8px 20px;
-  border-radius: 20px;
-  border: 1px solid #2a2d3e;
-  background-color: #1a1d2e;
-  color: #8888aa;
-  cursor: pointer;
-  font-size: 14px;
-  transition: all 0.2s;
-}
-
-.toolbar button:hover {
-  background-color: #4f8ef7;
-  color: #ffffff;
-  border-color: #4f8ef7;
-}
-
-.toolbar button.active {
-  background-color: #4f8ef7;
-  color: #ffffff;
-  border-color: #4f8ef7;
-}
-
-/* Error */
-.error {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 400px;
-  font-size: 18px;
-  color: #ff4d4d;
-  letter-spacing: 1px;
+  font-weight: bold;
 }
 
 /* Add Trade Form */
@@ -308,7 +293,7 @@ nav p {
   cursor: not-allowed;
 }
 
-/* Style number input arrows */
+/* Number input arrows */
 .form-row input[type='number']::-webkit-outer-spin-button,
 .form-row input[type='number']::-webkit-inner-spin-button {
   -webkit-appearance: auto;
@@ -322,8 +307,24 @@ nav p {
   opacity: 1;
 }
 
-/* Live price */
-.live-price {
+/* Loading */
+.loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 400px;
+  font-size: 18px;
   color: #4f8ef7;
-  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+/* Error */
+.error {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 400px;
+  font-size: 18px;
+  color: #ff4d4d;
+  letter-spacing: 1px;
 }
