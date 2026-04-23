@@ -1,0 +1,244 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+  background-color: #0f1117;
+  color: #ffffff;
+}
+
+/* Navbar */
+nav {
+  background-color: #1a1d2e;
+  padding: 16px 32px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #2a2d3e;
+}
+
+nav h2 {
+  color: #4f8ef7;
+  font-size: 24px;
+  letter-spacing: 1px;
+}
+
+nav p {
+  color: #8888aa;
+  font-size: 14px;
+}
+
+/* Main container */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 32px;
+}
+
+/* Portfolio Summary */
+.summary {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  margin-bottom: 32px;
+}
+
+.summary-card {
+  background-color: #1a1d2e;
+  border-radius: 12px;
+  padding: 20px;
+  border: 1px solid #2a2d3e;
+}
+
+.summary-card h3 {
+  color: #8888aa;
+  font-size: 13px;
+  margin-bottom: 8px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.summary-card p {
+  color: #ffffff;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+/* Filter buttons */
+.filters {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.filters button {
+  padding: 8px 20px;
+  border-radius: 20px;
+  border: 1px solid #2a2d3e;
+  background-color: #1a1d2e;
+  color: #8888aa;
+  cursor: pointer;
+  font-size: 14px;
+  transition: all 0.2s;
+}
+
+.filters button:hover {
+  background-color: #4f8ef7;
+  color: #ffffff;
+  border-color: #4f8ef7;
+}
+
+.filters button.active {
+  background-color: #4f8ef7;
+  color: #ffffff;
+  border-color: #4f8ef7;
+}
+
+/* Trade cards grid */
+.trade-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+/* Trade card */
+.trade-card {
+  background-color: #1a1d2e;
+  border-radius: 12px;
+  padding: 20px;
+  border: 1px solid #2a2d3e;
+  transition: transform 0.2s;
+}
+
+.trade-card:hover {
+  transform: translateY(-4px);
+  border-color: #4f8ef7;
+}
+
+.trade-card h3 {
+  font-size: 20px;
+  color: #4f8ef7;
+  margin-bottom: 12px;
+}
+
+.trade-card p {
+  color: #8888aa;
+  font-size: 14px;
+  margin-bottom: 6px;
+}
+
+.trade-card p span {
+  color: #ffffff;
+}
+
+/* Status badges */
+.status {
+  display: inline-block;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.status.executed {
+  background-color: #0d3d2e;
+  color: #00c896;
+}
+
+.status.pending {
+  background-color: #3d3000;
+  color: #f5c400;
+}
+
+.status.failed {
+  background-color: #3d0d0d;
+  color: #ff4d4d;
+}
+
+/* Trade type */
+.type-buy {
+  color: #00c896;
+  font-weight: bold;
+}
+
+.type-sell {
+  color: #ff4d4d;
+  font-weight: bold;
+}
+
+/* Toolbar */
+.toolbar {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 16px;
+  align-items: center;
+}
+
+.search-input {
+  padding: 8px 16px;
+  border-radius: 20px;
+  border: 1px solid #2a2d3e;
+  background-color: #1a1d2e;
+  color: #ffffff;
+  font-size: 14px;
+  width: 250px;
+  outline: none;
+}
+
+.search-input:focus {
+  border-color: #4f8ef7;
+}
+
+.search-input::placeholder {
+  color: #8888aa;
+}
+
+/* Loading */
+.loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 400px;
+  font-size: 18px;
+  color: #4f8ef7;
+  letter-spacing: 1px;
+}
+
+.toolbar button {
+  padding: 8px 20px;
+  border-radius: 20px;
+  border: 1px solid #2a2d3e;
+  background-color: #1a1d2e;
+  color: #8888aa;
+  cursor: pointer;
+  font-size: 14px;
+  transition: all 0.2s;
+}
+
+.toolbar button:hover {
+  background-color: #4f8ef7;
+  color: #ffffff;
+  border-color: #4f8ef7;
+}
+
+.toolbar button.active {
+  background-color: #4f8ef7;
+  color: #ffffff;
+  border-color: #4f8ef7;
+}
+
+/* Error */
+.error {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 400px;
+  font-size: 18px;
+  color: #ff4d4d;
+  letter-spacing: 1px;
+}
