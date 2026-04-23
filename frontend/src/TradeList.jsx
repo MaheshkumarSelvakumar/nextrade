@@ -5,7 +5,7 @@ function TradeList({ trades }) {
     <div>
       <div className="trade-grid">
         {trades.map(trade => (
-          <TradeCard key={trade.id} trade={trade} />
+          <TradeCard key={trade._id} trade={trade} />
         ))}
       </div>
     </div>
