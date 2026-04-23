@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 import Navbar from './Navbar'
 import TradeList from './TradeList'
 import PortfolioSummary from './PortfolioSummary'
+import AddTradeForm from './AddTradeForm'
 
 function App() {
   const [filter, setFilter] = useState('all')
@@ -18,11 +19,15 @@ function App() {
         setTradeData(data)
         setLoading(false)
       })
-      .catch( () => {
+      .catch(() => {
         setError('Failed to fetch trades. Is the server running?')
         setLoading(false)
       })
   }, [])
+
+  const handleTradeAdded = newTrade => {
+    setTradeData([...tradeData, newTrade])
+  }
 
   let filteredTrades = filter === 'all'
     ? tradeData
@@ -55,6 +60,7 @@ function App() {
         ) : (
           <>
             <PortfolioSummary trades={tradeData} />
+            <AddTradeForm onTradeAdded={handleTradeAdded} />
             <div className="toolbar">
               <input
                 type="text"

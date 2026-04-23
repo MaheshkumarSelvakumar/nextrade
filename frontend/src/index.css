@@ -242,3 +242,88 @@ nav p {
   color: #ff4d4d;
   letter-spacing: 1px;
 }
+
+/* Add Trade Form */
+.add-trade-form {
+  background-color: #1a1d2e;
+  border-radius: 12px;
+  padding: 24px;
+  margin-bottom: 24px;
+  border: 1px solid #2a2d3e;
+}
+
+.add-trade-form h2 {
+  color: #ffffff;
+  font-size: 16px;
+  margin-bottom: 16px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.form-row {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.form-row input,
+.form-row select {
+  padding: 8px 16px;
+  border-radius: 8px;
+  border: 1px solid #2a2d3e;
+  background-color: #0f1117;
+  color: #ffffff;
+  font-size: 14px;
+  outline: none;
+  flex: 1;
+}
+
+.form-row input:focus,
+.form-row select:focus {
+  border-color: #4f8ef7;
+}
+
+.form-row input::placeholder {
+  color: #8888aa;
+}
+
+.form-row button {
+  padding: 8px 24px;
+  border-radius: 8px;
+  border: none;
+  background-color: #4f8ef7;
+  color: #ffffff;
+  font-size: 14px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: all 0.2s;
+}
+
+.form-row button:hover {
+  background-color: #3a7ae0;
+}
+
+.form-row button:disabled {
+  background-color: #2a2d3e;
+  cursor: not-allowed;
+}
+
+/* Style number input arrows */
+.form-row input[type='number']::-webkit-outer-spin-button,
+.form-row input[type='number']::-webkit-inner-spin-button {
+  -webkit-appearance: auto;
+  opacity: 0.5;
+  cursor: pointer;
+  filter: invert(1);
+}
+
+.form-row input[type='number']::-webkit-outer-spin-button:hover,
+.form-row input[type='number']::-webkit-inner-spin-button:hover {
+  opacity: 1;
+}
+
+/* Live price */
+.live-price {
+  color: #4f8ef7;
+  font-weight: bold;
+}
